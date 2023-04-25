@@ -4,23 +4,43 @@
    margin: 0;
    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+:root {
+   --bg-primary: #424242;
+}
 
 body {
-   background-color: #424242;
+   background-color: var(--bg-primary);
+}
+
+.header {
+   text-align: center;
+   color: aliceblue;
+   padding: 1rem 0;
+   position: sticky;
+   top: 0px;
+   background-color: var(--bg-primary);
+   z-index: 5;
 }
 
 #app {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   display: flex;
+   flex-wrap: wrap;
+   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
    padding: 1rem;
+   padding-bottom: 150px;
    gap: 1rem;
+}
+.wrapper {
+   width: 100%;
+   /* border: 2px solid red; */
+   position: relative;
 }
 .note {
    height: 200px;
-   width: 0;
+   width: 100%;
+   padding: 1rem;
    resize: none;
-   border-radius: 5px;
-   padding: 0;
+   border-radius: 10px;
    color: #333;
    font-size: 1.2rem;
    transition: all 0.3s ease-in-out;
@@ -31,15 +51,28 @@ body {
 }
 
 .note-btn {
-   height: 200px;
+   height: 70px;
+   width: 100%;
    background-color: #a5a5a5;
    font-size: 4rem;
    color: #424242;
-   border-radius: 5px;
+   border-radius: 20px 20px 0 0;
    border: none;
    cursor: pointer;
    transition: all 0.2s ease-in-out;
+   position: fixed;
+   bottom: 0px;
+   left: 0;
 }
 .note-btn:hover {
    background-color: #b3b3b3;
+}
+.close-btn {
+   position: absolute;
+   right: 15px;
+   top: 8px;
+   font-size: 2.5rem;
+   transform: rotate(45deg);
+   color: #ccc;
+   cursor: pointer;
 }

@@ -16,8 +16,16 @@ function saveNotes(notes) {
 }
 
 function createNoteElement(id, content) {
+   const wrapper = document.createElement("div");
    const noteElement = document.createElement("textarea");
+   wrapper.append(noteElement);
+   wrapper.classList.add("wrapper");
    noteElement.classList.add("note");
+
+   const closeBtn = document.createElement("div");
+   wrapper.append(closeBtn);
+   closeBtn.innerText = "+";
+   closeBtn.classList.add("close-btn");
 
    noteElement.title = "remove by dubble click";
 
@@ -26,11 +34,11 @@ function createNoteElement(id, content) {
    noteElement.addEventListener("change", () => {
       updateNote(id, noteElement.value);
    });
-   noteElement.addEventListener("dblclick", () => {
-      deleteNote(id, noteElement);
+   closeBtn.addEventListener("click", () => {
+      deleteNote(id, wrapper);
    });
 
-   return noteElement;
+   return wrapper;
 }
 
 function addNotes() {
@@ -44,10 +52,6 @@ function addNotes() {
    const noteElement = createNoteElement(noteItem.id, noteItem.content);
    appContainer.insertBefore(noteElement, button);
    document.querySelectorAll(".note").forEach((item) => item.focus());
-   document.querySelectorAll(".note").forEach((item) => {
-      item.style.width = "200px";
-      item.style.padding = "1rem";
-   });
 
    notes.push(noteItem);
    saveNotes(notes);
