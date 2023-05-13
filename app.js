@@ -18,6 +18,7 @@ function saveNotes(notes) {
 function createNoteElement(id, content) {
    const wrapper = document.createElement("div");
    const noteElement = document.createElement("textarea");
+   noteElement.contentEditable = true;
    wrapper.append(noteElement);
    wrapper.classList.add("wrapper");
    noteElement.classList.add("note");
@@ -31,7 +32,7 @@ function createNoteElement(id, content) {
 
    noteElement.value = content;
 
-   noteElement.addEventListener("change", () => {
+   noteElement.addEventListener("keydown", () => {
       updateNote(id, noteElement.value);
    });
    closeBtn.addEventListener("click", () => {
