@@ -48,16 +48,16 @@ body {
 .note {
    /* min-height: 100%; */
    /* height: 100%; */
-   width: 100%;
+   /* width: 100%;
    padding: 1rem;
    resize: none;
    border-radius: 10px;
    color: #333;
    font-size: 1.2rem;
    background-color: #ebebeb;
-   transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out; */
    /* overflow-y: auto; */
-   min-height: 200px;
+   /* min-height: 200px; */
 }
 textarea {
    /* background-color: red; */
@@ -77,9 +77,9 @@ textarea {
    height: 70px;
    width: 100%;
    background-color: #a5a5a5;
-   font-size: 4rem;
+   font-size: 3rem;
    color: #424242;
-   border-radius: 20px 20px 0 0;
+   border-radius: 15px 15px 0 0;
    border: none;
    cursor: pointer;
    transition: all 0.2s ease-in-out;
@@ -98,4 +98,19 @@ textarea {
    transform: rotate(45deg);
    color: #ccc;
    cursor: pointer;
+}
+
+.note {
+   display: block;
+   width: 100%;
+   /* overflow: hidden; */
+   resize: both;
+   min-height: 100px;
+   line-height: 30px;
+   padding: 1rem;
+   border-radius: 10px;
+   color: #333;
+   font-size: 1.2rem;
+   background-color: #ebebeb;
+   margin: 1rem 0;
 }
